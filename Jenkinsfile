@@ -7,11 +7,11 @@ try {
             }
 
             stage('build') {
-                openshiftBuild(buildConfig: 'insultapp', showBuildLogs: 'true')
+                openshiftBuild(buildConfig: 'insult-app-wildfly', showBuildLogs: 'true')
             }
 
             stage('deploy') {
-                openshiftDeploy(deploymentConfig: 'insultapp')
+                openshiftDeploy(deploymentConfig: 'insult-app-wildfly')
             }
         }
     }
