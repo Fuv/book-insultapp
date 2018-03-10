@@ -1,11 +1,6 @@
 try {
     timeout(time: 20, unit: 'MINUTES') {
         node('maven') {
-            stage('mvn clean package') {
-                checkout scm
-                sh 'mvn clean package'
-            }
-
             stage('build') {
                 openshiftBuild(buildConfig: 'insult-app-wildfly', showBuildLogs: 'true')
             }
